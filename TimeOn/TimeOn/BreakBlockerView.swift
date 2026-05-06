@@ -3,7 +3,7 @@ import SwiftUI
 struct BreakBlockerView: View {
     @EnvironmentObject var controller: SessionController
 
-    private static let foreground = Color(red: 0x9A / 255, green: 0x9A / 255, blue: 0x9B / 255)
+    private static let foreground = Color(red: 0x71 / 255, green: 0x71 / 255, blue: 0x71 / 255)
 
     var body: some View {
         ZStack {

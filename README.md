@@ -63,6 +63,7 @@ The unit tests use Swift Testing and an injected `BreakBlocking` spy plus an iso
 
 Pre-built binaries are published on the [Releases page](https://github.com/jalopezsuarez/TimeOn/releases).
 
+- **v1.0.2** — Break overlay text, progress bar and Skip Break button switched to `#717171`. Same signing as v1.0.1.
 - **v1.0.1** — Custom app icon (`TimeOn.icns`) wired into the asset catalog. Same Release / arm64 / Apple Development signing as v1.0.0.
 - **v1.0.0** — Release / arm64, signed with an **Apple Development** identity (`Jose Antonio Lopez Suarez`, team `DF5Y772UU7`). `codesign --verify --strict` passes. The certificate is a development cert, not a Developer ID Application cert, and the build is not notarized — so Gatekeeper still rejects it on a first run. Right-click → Open to bypass it.
 
