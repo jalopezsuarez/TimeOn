@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>TimeOn — Forced breaks for macOS</title>
+<meta name="description" content="A menu bar timer for macOS that turns every screen black until your break is over. Multi-display, hardened, no Dock icon." />
+<meta name="theme-color" content="#000000" />
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/icon-256.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top">
+      <img src="assets/favicon.png" alt="" width="22" height="22" />
+      <span>TimeOn</span>
+    </a>
+    <nav class="nav__links">
+      <a href="#features">Features</a>
+      <a href="#hardening">Hardening</a>
+      <a href="#download">Download</a>
+      <a href="https://github.com/jalopezsuarez/TimeOn" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <img class="hero__icon reveal" src="assets/icon.png" alt="TimeOn app icon" width="220" height="220" />
+      <h1 class="hero__title reveal">TimeOn.</h1>
+      <p class="hero__tagline reveal">Breaks you can't ignore.</p>
+      <p class="hero__sub reveal">A tiny menu bar app for macOS that runs your work / break cycle and, when the timer hits zero, blacks out every connected display until the break is really over.</p>
+      <div class="hero__cta reveal">
+        <a class="btn btn--primary" href="#download">Download for macOS</a>
+        <a class="btn btn--ghost" href="https://github.com/jalopezsuarez/TimeOn" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+      <p class="hero__meta reveal">v1.0.2 · macOS 26.3+ · Universal (arm64 · x86_64) · Free</p>
+    </div>
+  </section>
+
+  <!-- ============ MENU BAR PITCH ============ -->
+  <section class="section section--soft">
+    <div class="container">
+      <h2 class="eyebrow reveal">A pomodoro that doesn't ask permission.</h2>
+      <p class="lede reveal">Most timers ping. TimeOn covers every pixel on every screen with an unkillable black overlay. Your break stops being optional.</p>
+      <div class="menubar-demo reveal" aria-hidden="true">
+        <div class="menubar">
+          <div class="menubar__left">
+            <span class="menubar__apple"></span>
+            <span class="menubar__app">Xcode</span>
+            <span>File</span><span>Edit</span><span>View</span><span>Find</span><span>Navigate</span><span>Editor</span><span>Product</span>
+          </div>
+          <div class="menubar__right">
+            <span class="menubar__timer"><span class="menubar__dot">⦿</span> 12m</span>
+            <span class="menubar__icon">􀙥</span>
+            <span class="menubar__icon">􀋒</span>
+            <span class="menubar__icon">􀇨</span>
+            <span class="menubar__time">00:14</span>
+            <span class="menubar__time">Wed 7 May</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BREAK OVERLAY DEMO ============ -->
+  <section class="section section--dark" id="features">
+    <div class="container container--narrow">
+      <h2 class="title reveal">When the timer hits zero,<br/>your screen turns into this.</h2>
+      <p class="lede lede--invert reveal">No notifications. No "5 more minutes". One borderless black window per display, above the Dock, the menu bar, the screen saver, and notifications.</p>
+    </div>
+    <div class="overlay-demo reveal">
+      <div class="overlay-demo__bezel">
+        <div class="overlay-demo__screen">
+          <div class="overlay-demo__progress">
+            <div class="overlay-demo__progress-track"></div>
+            <div class="overlay-demo__progress-fill" style="width:38%"></div>
+          </div>
+          <div class="overlay-demo__times">
+            <span>01:54</span>
+            <span>-03:06</span>
+          </div>
+          <button class="overlay-demo__skip" type="button" tabindex="-1">Skip Break</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURE GRID ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="grid">
+
+        <article class="card reveal">
+          <h3>Menu bar only</h3>
+          <p>Lives as <code>⦿ 12m</code> in the menu bar. No Dock icon. No Cmd-Tab presence. <code>⏸ 12m</code> while paused.</p>
+        </article>
+
+        <article class="card reveal">
+          <h3>Configurable cycle</h3>
+          <p>Work blocks of 25 / 30 / 45 / 50 / 60 / 75 / 90 / 120 min. Breaks of 1 / 5 / 10 / 15 / 20 / 30 / 45 min.</p>
+        </article>
+
+        <article class="card reveal">
+          <h3>Multi-display blocker</h3>
+          <p>One borderless <code>NSWindow</code> per <code>NSScreen</code> at <code>kCGMaximumWindowLevelKey</code>. Rebuilt on display changes, wake, screensaver and Space switches.</p>
+        </article>
+
+        <article class="card reveal">
+          <h3>Pause &amp; resume</h3>
+          <p>Pause preserves the exact remaining time to the second. The menu bar icon switches to <code>⏸</code> so you know.</p>
+        </article>
+
+        <article class="card reveal">
+          <h3>Bypass apps</h3>
+          <p>Pick any running app from the system. If it's in the foreground when a break would trigger, the break is skipped and a fresh work cycle starts.</p>
+        </article>
+
+        <article class="card reveal">
+          <h3>Test Break (10 s)</h3>
+          <p>A one-tap 10-second break to verify the blocker works on your hardware before relying on it.</p>
+        </article>
+
+        <article class="card reveal">
+          <h3>Smooth progress</h3>
+          <p>Drawn manually with <code>TimelineView(.animation)</code> at 60 fps. The bar grows continuously instead of jumping every second.</p>
+        </article>
+
+        <article class="card reveal">
+          <h3>Skip Break, optional</h3>
+          <p>Show or hide the Skip button from settings. Off by default if you want zero outs.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HARDENING ============ -->
+  <section class="section section--soft" id="hardening">
+    <div class="container container--narrow">
+      <h2 class="title reveal">Hardened.</h2>
+      <p class="lede reveal">A break overlay you can dismiss isn't a break. TimeOn keeps the curtain down.</p>
+      <ul class="hard-list">
+        <li class="reveal"><strong>Maximum window level.</strong> The overlay sits above the Dock, menu bar, screen saver and notifications.</li>
+        <li class="reveal"><strong>Hostile presentation options.</strong> Hide Dock, hide menu bar, disable Apple menu, disable process switching, disable Force Quit, disable session termination, disable Hide.</li>
+        <li class="reveal"><strong>Key event swallowing.</strong> <code>keyDown</code>, <code>performKeyEquivalent</code> and <code>cancelOperation</code> (Esc) are all absorbed.</li>
+        <li class="reveal"><strong>0.5s watchdog.</strong> Re-applies presentation options, window level, visibility and re-activates the app if it loses focus.</li>
+        <li class="reveal"><strong>Wake / Space / screensaver observers.</strong> Reinforces the overlay on every display change, wake event and active-space change.</li>
+        <li class="reveal"><strong>App Sandbox off.</strong> Required so the blocker can use the maximum window level and survive standard quit shortcuts during a break.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ STATS / TYPE LINE ============ -->
+  <section class="section section--accent">
+    <div class="container">
+      <div class="stats reveal">
+        <div class="stat"><span class="stat__num">60</span><span class="stat__label">fps progress bar</span></div>
+        <div class="stat"><span class="stat__num">0.5s</span><span class="stat__label">watchdog interval</span></div>
+        <div class="stat"><span class="stat__num">∞</span><span class="stat__label">displays covered</span></div>
+        <div class="stat"><span class="stat__num">27</span><span class="stat__label">unit tests</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOWNLOAD ============ -->
+  <section class="section section--dark" id="download">
+    <div class="container container--narrow">
+      <h2 class="title reveal">Get TimeOn.</h2>
+      <p class="lede lede--invert reveal">macOS 26.3 or later. Universal binary. Signed with an Apple Development identity — first launch needs a right-click → Open to clear Gatekeeper.</p>
+      <div class="download-cta reveal">
+        <a class="btn btn--primary btn--large" href="https://github.com/jalopezsuarez/TimeOn/releases/latest" target="_blank" rel="noopener">Download v1.0.2</a>
+        <a class="btn btn--ghost btn--large" href="https://github.com/jalopezsuarez/TimeOn" target="_blank" rel="noopener">Source on GitHub</a>
+      </div>
+      <p class="download-meta reveal">Free · MIT-friendly · Built with SwiftUI &amp; AppKit.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <img src="assets/favicon.png" alt="" width="20" height="20" />
+      <span>TimeOn</span>
+    </div>
+    <p class="footer__copy">Designed and built by <a href="https://github.com/jalopezsuarez" target="_blank" rel="noopener">jalopezsuarez</a>.</p>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
