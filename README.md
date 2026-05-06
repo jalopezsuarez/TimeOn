@@ -63,7 +63,9 @@ The unit tests use Swift Testing and an injected `BreakBlocking` spy plus an iso
 
 Pre-built binaries are published on the [Releases page](https://github.com/jalopezsuarez/TimeOn/releases).
 
-- **v1.0.0** — first release, ad-hoc signed (no Apple Developer ID, no notarization). On first launch macOS shows the Gatekeeper prompt; right-click → Open to bypass it.
+- **v1.0.0** — Release / arm64, signed with an **Apple Development** identity (`Jose Antonio Lopez Suarez`, team `DF5Y772UU7`). `codesign --verify --strict` passes. The certificate is a development cert, not a Developer ID Application cert, and the build is not notarized — so Gatekeeper still rejects it on a first run. Right-click → Open to bypass it.
+
+A fully Gatekeeper-clean build needs a Developer ID Application certificate plus `xcrun notarytool` notarization, both gated on an Apple Developer Program enrollment.
 
 ## Known limits
 
