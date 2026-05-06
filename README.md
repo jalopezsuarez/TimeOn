@@ -59,6 +59,12 @@ DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer \
 
 The unit tests use Swift Testing and an injected `BreakBlocking` spy plus an isolated `UserDefaults` suite, so they cover the full lifecycle (start / skip / pause / resume / bypass / persistence / time math / phase transitions) without ever opening a real overlay window.
 
+## Releases
+
+Pre-built binaries are published on the [Releases page](https://github.com/jalopezsuarez/TimeOn/releases).
+
+- **v1.0.0** — first release, ad-hoc signed (no Apple Developer ID, no notarization). On first launch macOS shows the Gatekeeper prompt; right-click → Open to bypass it.
+
 ## Known limits
 
 - `kill -9` from another terminal or Activity Monitor will still terminate the app — preventing that needs a privileged helper, out of scope.
