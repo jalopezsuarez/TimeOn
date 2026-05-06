@@ -2,6 +2,8 @@
 
 Forced-break timer for macOS. Lives as a menu bar icon, runs a configurable work / break cycle, and at the end of every work block it covers every connected display with an unkillable black overlay until the break is over.
 
+**Website:** [jalopezsuarez.github.io/TimeOn](https://jalopezsuarez.github.io/TimeOn/) · **Source for the site:** [`www/`](./www)
+
 ## Features
 
 - **Menu bar agent** with the format `⦿ 12m` showing minutes until the next break (`⏸ 12m` while paused). No Dock icon, no Cmd-Tab presence.
